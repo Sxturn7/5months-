@@ -1,4 +1,5 @@
 let i = 0
+let ok = 0
 
 let text1 = "Hey Prozac ❤️"
 let text2 = "A small universe from Saturn to you."
@@ -12,7 +13,8 @@ i++
 
 }else{
 
-i=0
+i = 0
+ok++
 
 }
 
@@ -20,9 +22,10 @@ i=0
 
 setInterval(function(){
 
-if(i < text1.length){
+if(ok == 0){
 typeWriter(text1,"txt1")
-}else{
+}
+else if(ok == 1){
 typeWriter(text2,"txt2")
 }
 
