@@ -198,6 +198,7 @@ var myTxt = document.getElementById("imgText")
 var imageIndex = 0
 var flag = 1
 var t = 0
+var ok = 0
 
 var imageArray = [
 
@@ -235,8 +236,33 @@ var txtArray = [
 
 var len = imageArray.length
 
-</script>
+function showImage(){
 
+myImage.src = imageArray[imageIndex]
+myTxt.innerHTML = txtArray[imageIndex]
+
+imageIndex++
+
+if(imageIndex >= len){
+imageIndex = 0
+}
+
+}
+
+function play(){
+
+document.getElementById("typeDiv").style.opacity = 0
+document.getElementById("imgTxt").style.opacity = 1
+
+setInterval(showImage,2500)
+
+setTimeout(function(){
+document.getElementById("letterSection").style.opacity = 1
+},30000)
+
+}
+
+</script>
 
 
 <script src="stars.js"></script>
@@ -247,3 +273,4 @@ var len = imageArray.length
 
 </body>
 </html>
+
