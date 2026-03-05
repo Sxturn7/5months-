@@ -1,19 +1,23 @@
-var start = new Date(2025, 9, 5)
+var startDate = new Date("October 5, 2025 00:00:00")
 
-function timer(){
+function updateTimer(){
 
-var t = new Date() - start
+var now = new Date()
 
-var d = Math.floor(t/1000/60/60/24)
-var h = Math.floor(t/1000/60/60%24)
-var m = Math.floor(t/1000/60%60)
-var s = Math.floor(t/1000%60)
+var diff = now - startDate
 
-document.getElementById("d").innerHTML=d
-document.getElementById("h").innerHTML=h
-document.getElementById("m").innerHTML=m
-document.getElementById("s").innerHTML=s
+var days = Math.floor(diff / (1000 * 60 * 60 * 24))
+var hours = Math.floor((diff / (1000 * 60 * 60)) % 24)
+var minutes = Math.floor((diff / (1000 * 60)) % 60)
+var seconds = Math.floor((diff / 1000) % 60)
+
+document.getElementById("d").innerHTML = days
+document.getElementById("h").innerHTML = hours
+document.getElementById("m").innerHTML = minutes
+document.getElementById("s").innerHTML = seconds
 
 }
 
-setInterval(timer,1000)
+updateTimer()
+
+setInterval(updateTimer,1000)
