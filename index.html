@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prozac & Saturn</title>
+
+<link rel="stylesheet" href="format.css">
+
+<style>
+body{
+margin:0;
+overflow:hidden;
+background:black;
+font-family:Arial;
+color:white;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+#img{
+max-width:85vw;
+max-height:70vh;
+width:auto;
+height:auto;
+display:block;
+margin:auto;
+border-radius:10px;
+box-shadow:0 0 30px rgba(0,0,0,0.6);
+opacity:0;
+transition:opacity 1.2s ease;
+}
+</style>
+</head>
+
+<body>
+
+<canvas></canvas>
+
+<div id="typeDiv">
+<p id="txt1"></p>
+<p id="txt2"></p>
+</div>
+
+<div id="content">
+<p id="together">Prozac & Saturn ✨</p>
+
+<div id="timer">
+<span id="d"></span> Days
+<span id="h"></span> Hours
+<span id="m"></span> Minutes
+<span id="s"></span> Seconds
+</div>
+</div>
+
+<div id="imgTxt">
+<img id="img">
+<p id="Txt"></p>
+</div>
+
+<div id="heartTxt">
+<button id="button" onclick="play()"></button>
+<div id="clickMe">Click the heart ❤️</div>
+</div>
+
+<div id="letterSection">
+
+<h2>From Saturn</h2>
+
+<p>
+Happy 5 months Aarya ❤️
+<br><br>
+
+It honestly feels unreal that it’s already been five months...
+sometimes it feels like it all happened in the blink of an eye.
+
+<br><br>
+
+The past few weeks have had their ups and downs and I regret the moments where I hurt you.
+I’m truly sorry for the way I acted and especially for lying to you.
+
+<br><br>
+
+But what I can promise now is to try harder.
+For you, for me, and for us.
+
+<br><br>
+
+These holidays made me realise how much my world quietly revolves around you.
+
+<br><br>
+
+I miss you more than I can put into words.
+
+<br><br>
+
+Somewhere along the way I fell deeply in love with you.
+
+<br><br>
+
+I am in love with you, Aarya.
+
+<br><br>
+
+Watching you grow, seeing your strength and passion makes me admire you even more.
+
+<br><br>
+
+We may not be perfect, but I hope we always find our way back to each other.
+
+<br><br>
+
+I want to spend the rest of my life with you.
+
+<br><br>
+
+Even if you can’t share everything with me,
+I’m still here for you.
+
+<br><br>
+
+With all my love,<br>
+Satvik ❤️
+</p>
+
+</div>
+
+<div id="endingScene">
+
+<p>In Saturn's universe...</p>
+
+<p>there is only one planet.</p>
+
+<div id="saturnWrap">
+
+<div id="saturnPlanet"></div>
+
+<p id="endingLine3">Prozac.</p>
+
+</div>
+
+</div>
+
+<script>
+
+var ok = 0
+var flag = 0
+var t = 0
+
+var myImage = document.getElementById("img")
+var myTxt = document.getElementById("Txt")
+
+var imageIndex = 0
+
+var imageArray = [
+
+"pic/photo1.jpeg",
+"pic/photo2.jpeg",
+"pic/photo3.jpeg",
+"pic/photo4.jpeg",
+"pic/photo5.jpeg",
+"pic/photo6.jpeg",
+"pic/photo7.jpeg",
+"pic/photo8.jpeg",
+"pic/photo9.jpeg",
+"pic/photo10.jpeg",
+"pic/photo11.jpeg",
+"pic/photo12.jpeg"
+
+]
+
+var txtArray = [
+
+"The day it all began.",
+"Our first date.",
+
+"ARB with you for the first time.",
+"The fest felt different with you there.",
+
+"First… ehm… you know what.",
+
+"Kopal Gupta.",
+
+"At least put your arm on my shoulders 😭",
+
+"My flower taking pictures of flowers.",
+
+"The moment I asked.",
+"Will you be my Valentine?",
+
+"The first picture that made my heart skip.",
+
+"My SPC.",
+
+"Birthday of my sweet little baby."
+
+]
+
+var len = imageArray.length
+
+function play(){
+
+showImage()
+
+}
+
+function showImage(){
+
+myImage.style.opacity = 0
+
+setTimeout(function(){
+
+myImage.src = imageArray[imageIndex]
+myTxt.innerHTML = txtArray[imageIndex]
+
+myImage.style.opacity = 1
+
+imageIndex++
+
+if(imageIndex >= len){
+imageIndex = 0
+}
+
+},500)
+
+setTimeout(showImage,3000)
+
+}
+
+</script>
+
+<script src="stars.js"></script>
+<script src="typeWriter.js"></script>
+<script src="date.js"></script>
+
+<script>
+
+setTimeout(function(){
+
+document.getElementById("letterSection").style.opacity = 1
+
+},40000)
+
+setTimeout(function(){
+
+document.getElementById("endingScene").style.opacity = 1
+
+setTimeout(function(){
+
+document.getElementById("saturnPlanet").style.opacity = 1
+
+},2000)
+
+},55000)
+
+</script>
+
+</body>
+</html>
